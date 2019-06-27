@@ -15,9 +15,9 @@ var isHappy = function(n) {
       if (sum === 1) return true
       // 如果存在则直接跳出循环（因为已存在的会进入一个循环永远都不会是一个快乐数）
       if (temp.indexOf(sum) > -1) return false
-      // 如果不存在则讲其放入数组中
+      // 如果不存在则将其放入数组中
       temp.push(sum)
-      // 重新给arr赋值
+      // 重新给 arr 赋值
       arr = sum.toString().split('')
   }
 };
