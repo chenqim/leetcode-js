@@ -14,6 +14,18 @@ var removeElement = function(nums, val) {
   return nums.length
 };
 
+// 双指针法
+var removeElement2 = function(nums, val) {
+  let ans = 0
+  for(const num of nums) {
+      if(num !== val) {
+          nums[ans] = num
+          ans++
+      }
+  }
+  return ans
+};
+
 let nums = [0,1,2,2,3,0,4,2]
-console.log(removeElement(nums, 2))
+console.log(removeElement2(nums, 2))
 console.log(nums)
