@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var isValid = function(s) {
+  // 去空格
   s = s.replace(/\s/g, '')
   let stack = []
   for (let i = 0; i < s.length; i ++) {
