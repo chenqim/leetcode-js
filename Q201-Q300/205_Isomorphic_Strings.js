@@ -38,6 +38,16 @@ var isIsomorphic2 = function(s, t) {
   return true
 };
 
+// 用每一个字母第一次出现的位置来判断
+var isIsomorphic3 = function(s, t) {
+  let sArr = s.split('')
+  let tArr = t.split('')
+  for (let i = 0; i < sArr.length; i++) {
+      if (sArr.indexOf(sArr[i]) !== tArr.indexOf(tArr[i])) return false
+  }
+  return true
+};
+
 let start = new Date().getTime()
 console.log(isIsomorphic('title', 'paper'))
 let end = new Date().getTime()
