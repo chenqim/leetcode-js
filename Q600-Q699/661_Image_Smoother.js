@@ -2,59 +2,6 @@
  * @param {number[][]} M
  * @return {number[][]}
  */
-var imageSmoother2 = function(M) {
-    const arr = M.concat()
-    for (let i = 0; i < M.length; i++) {
-        for (let j = 0; j < M[i].length; j++) {
-            let temp = 0
-            // 左上
-            if (i === 0 && j === 0) {
-                temp = (M[0][0] + M[0][1] + M[1][0] + M[1][1]) / 4
-            }
-            // 右上
-            else if (i === 0 && j === M[i].length - 1) {
-                temp = (M[0][j - 1] + M[0][j] + M[1][j - 1] + M[1][j]) / 4
-            }
-            // 左下
-            else if (i === M.length - 1 && j === 0) {
-                temp = (M[i][0] + M[i][1] + M[i - 1][0] + M[i - 2][1]) / 4
-            }
-            // 右上
-            else if (i === M.length - 1 && j === M[i].length - 1) {
-                temp = (M[i][j - 1] + M[i][j] + M[i - 1][j - 1] + M[i - 1][j]) / 4
-            }
-            // 上
-            else if (i === 0 && j !== 0  && j !== M[i].length - 1) {
-                temp = (M[0][j - 1] + M[0][j] + M[0][j + 1] + M[1][j - 1] + M[1][j] + M[1][j + 1]) / 6
-            }
-            // 下
-            else if (i === M.length - 1 && j !== 0 && j !== M[i].length - 1) {
-                temp = (M[i][j - 1] + M[i][j] + M[i][j + 1] + M[i - 1][j - 1] + M[i - 1][j] + M[i - 1][j + 1]) / 6
-            }
-            // 左
-            else if (j === 0 && i !== 0 && i !== M.length - 1) {
-                temp = (M[i][j] + M[i + 1][j] + M[i - 1][j] + M[i - 1][j + 1] + M[i + 1][j] + M[i + 1][j + 1]) / 6
-            }
-            // 右
-            else if (j === M[i].length - 1 && i !== 0 && i !== M.length - 1) {
-                temp = (M[i][j] + M[i - 1][j] + M[i - 1][j] + M[i - 1][j - 1] + M[i + 1][j] + M[i + 1][j - 1]) / 6
-            } else {
-                temp = (
-                    M[i - 1][j - 1] + M[i - 1][j] + M[i - 1][j + 1] + 
-                    M[i][j - 1] + M[i][j] + M[i][j + 1] + 
-                    M[i + 1][j - 1] + M[i + 1][j] + M[i + 1][j + 1]
-                ) / 8
-            }
-            arr[i][j] = Math.floor(temp)
-        }
-    }
-    return arr
-};
-
-/**
- * @param {number[][]} M
- * @return {number[][]}
- */
 // 写的我老眼昏花，写错了好多次  TAT
 var imageSmoother = function(M) {
   const arr = []
