@@ -1,3 +1,5 @@
+// import NodeList from '../utils/NodeList.js'
+// const { NodeList } = require('../utils/NodeList')
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -28,3 +30,12 @@ var getDecimalValue2 = function(head) {
     }
     return ans
 };
+
+// node 环境下执行需要引入 NodeList
+let nodeList = new NodeList()
+nodeList.push(1)
+nodeList.push(0)
+nodeList.push(1)
+console.log(nodeList)
+
+console.log(getDecimalValue(nodeList.head))
