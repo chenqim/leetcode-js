@@ -17,4 +17,6 @@ var makeGood = function(s) {
     i++
   }
   return tmp.join('')
-};
+}
+
+console.log(makeGood('leEeetcode'))
